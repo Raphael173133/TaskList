@@ -1,16 +1,26 @@
 <?php
 require_once "bdd-crud.php";
-// BONUS Valider une tache dans la BDD et redirection vers la page d'accueil
+session_start();
 
+// Vérifie que l'utilisateur est connecté
+if (!isset($_SESSION["user_id"])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Vérifie qu'un ID est passé en GET
+if (!isset($_GET["id"])) {
+    header("Location: index.php");
+    exit;
+}
+
+$task_id = (int) $_GET["id"];
+$user_id = $_SESSION["user_id"];
+
+// Marque la tâche comme terminée si elle appartient à l'utilisateur
+validate_task($task_id, $user_id);
+
+// Redirection vers l'accueil
+header("Location: index.php");
+exit;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>validate Task</title>
-</head>
-<body>
-    
-</body>
-</html>
