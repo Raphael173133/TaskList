@@ -18,6 +18,11 @@ $tasks = get_tasks_by_user_id($user_id); // Fonction à ajouter si ce n’est pa
 <head>
     <meta charset="UTF-8">
     <title>Mes tâches</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+    
+
 </head>
 <body>
     <header>

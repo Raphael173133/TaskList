@@ -1,0 +1,50 @@
+         body {
+            margin: 0;
+            padding: 0;
+            background-color: #f1c40f; /* Jaune */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .task-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .task-detail {
+            margin-bottom: 20px;
+        }
+
+        .task-detail label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .task-detail p {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .task-container a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #d35400;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .task-container a:hover {
+            text-decoration: underline;
+        }

@@ -33,22 +33,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>Connexion</h1>
 
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <div class="form-container">
+        <h1>Connexion</h1>
 
-    <form method="POST">
-        <label>Email :</label><br>
-        <input type="email" name="email" required><br><br>
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
 
-        <label>Mot de passe :</label><br>
-        <input type="password" name="password" required><br><br>
+        <form method="POST">
+            <label for="email">Email :</label><br>
+            <input type="email" id="email" name="email" required><br>
 
-        <button type="submit">Se connecter</button>
-    </form>
+            <label for="password">Mot de passe :</label><br>
+            <input type="password" id="password" name="password" required><br>
 
-    <p>Pas encore inscrit ? <a href="inscription.php">Créer un compte</a></p>
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <p>Pas encore inscrit ? <a href="inscription.php">Créer un compte</a></p>
+    </div>
+
 </body>
 </html>

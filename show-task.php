@@ -33,14 +33,32 @@ if (!$task) {
 <head>
     <meta charset="UTF-8">
     <title>Détail de la tâche</title>
+
+    <link rel="stylesheet" href="style3.css">
+
 </head>
 <body>
-    <h1>Détails de la tâche</h1>
 
-    <p><strong>Nom :</strong> <?= htmlspecialchars($task["name"]) ?></p>
-    <p><strong>Description :</strong><br><?= nl2br(htmlspecialchars($task["description"])) ?></p>
-    <p><strong>Statut :</strong> <?= $task["is_done"] ? "✔️ Terminée" : "⏳ En cours" ?></p>
+    <div class="task-container">
+        <h1>Détails de la tâche</h1>
 
-    <p><a href="index.php">← Retour à la liste</a></p>
+        <div class="task-detail">
+            <label>Nom :</label>
+            <p><?= htmlspecialchars($task["name"]) ?></p>
+        </div>
+
+        <div class="task-detail">
+            <label>Description :</label>
+            <p><?= htmlspecialchars($task["description"]) ?></p>
+        </div>
+
+        <div class="task-detail">
+            <label>Statut :</label>
+            <p><?= $task["is_done"] ? "✔️ Terminée" : "⏳ En cours" ?></p>
+        </div>
+
+        <a href="index.php">← Retour à la liste</a>
+    </div>
+
 </body>
 </html>

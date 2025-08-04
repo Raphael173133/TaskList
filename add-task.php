@@ -33,22 +33,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Ajouter une tâche</title>
+    <link rel="stylesheet" href="style2.css">
+  
 </head>
 <body>
-    <h1>Ajouter une nouvelle tâche</h1>
 
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <div class="form-container">
+        <h1>Ajouter une nouvelle tâche</h1>
 
-    <form method="POST">
-        <label>Nom de la tâche :</label><br>
-        <input type="text" name="name" required><br><br>
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
 
-        <label>Description :</label><br>
-        <textarea name="description" rows="4" cols="50"></textarea><br><br>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Nom de la tâche :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-        <button type="submit">Ajouter</button>
-    </form>
+            <div class="form-group">
+                <label for="description">Description :</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </div>
 
-    <p><a href="index.php">← Retour à la liste des tâches</a></p>
+            <button type="submit">Ajouter</button>
+        </form>
+
+        <p><a href="index.php">← Retour à la liste des tâches</a></p>
+    </div>
+
 </body>
 </html>
