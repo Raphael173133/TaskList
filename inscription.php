@@ -30,22 +30,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
+
+    <link rel="stylesheet" href="style4.css">
+
+   
 </head>
 <body>
-    <h1>Créer un compte</h1>
 
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <div class="form-container">
+        <h1>Créer un compte</h1>
 
-    <form method="POST">
-        <label>Email :</label><br>
-        <input type="email" name="email" required><br><br>
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
 
-        <label>Mot de passe :</label><br>
-        <input type="password" name="password" required><br><br>
+        <form method="POST">
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-        <button type="submit">S'inscrire</button>
-    </form>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-    <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
+            <button type="submit">S'inscrire</button>
+        </form>
+
+        <p>Déjà un compte ? <a href="login.php">Se connecter</a></p>
+    </div>
+
 </body>
 </html>
